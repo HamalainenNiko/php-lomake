@@ -1,16 +1,19 @@
 <?php
+error_reporting( E_ALL );
 
 $name = htmlspecialchars($_POST['name']);
 $email = htmlspecialchars($_POST['email']);
 $feedback = htmlspecialchars($_POST['feedback']);
+$date = date("d/m : H:i :");
 
 if(isset($name) && isset($email) && isset($feedback)){
     $data = $name . '  ' . $email . '  ' . $feedback . "\r\n";
-    $ret= file_put_contents('yeet.txt', $data, FILE_APPEND | LOCK_EX);
+    $ret= file_put_contents('yeet.txt', $date.$data, FILE_APPEND | LOCK_EX);
     if($ret === false) {
         die('There was an error writing this file');
     } else {
         echo "$ret bytes written to file";
+
 
         $toEmail = 'niko02.hamalainen@gmail.com';
         $subject = 'Uutta palautetta nimimerkiltä ' .$name;
@@ -29,9 +32,9 @@ if(isset($name) && isset($email) && isset($feedback)){
         } else {
             $msg = 'Sähköpostin lähetys epäonnistui';
             $msgClass = 'alert-danger';
-        }
-    }
-} 
+        } 
+    } 
+}  
 else {
     die('no post data to process');
 } 
