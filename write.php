@@ -14,7 +14,7 @@ if(isset($name) && isset($email) && isset($feedback)){
     if($ret === false) {
         die('There was an error writing this file');
     } else {
-        echo "$ret bytes written to file";
+        echo "Palaute lähetetty.";
 
 
         $toEmail = 'niko02.hamalainen@gmail.com';
