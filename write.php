@@ -9,7 +9,7 @@ $feedback = htmlspecialchars($_POST['feedback']);
 $date = date("d/m : H:i :");
 
 if(isset($name) && isset($email) && isset($feedback)){
-    $data = $name . '  ' . $email . '  ' . $feedback . "\r\n";
+    $data = $name . '<br>' . $email . '<br>' . $feedback . "\r\n";
     $ret = file_put_contents('feedback.txt', $date.$data, FILE_APPEND | LOCK_EX);
     if($ret === false) {
         die('There was an error writing this file');
