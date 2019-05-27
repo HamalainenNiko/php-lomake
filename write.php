@@ -22,7 +22,8 @@ if(isset($name) && isset($email) && isset($feedback)){
         $body = '<h2>Palautetta</h2>
         <h4>Nimi</h4><p>'.$name.'</p>
         <h4>Sähköposti</h4><p>'.$email.'</p>
-        <h4>Palaute</h4><p>'.$feedback.'</p>';
+        <h4>Palaute</h4><p>'.$feedback.'</p>
+        <h4>Linkki: </h4>' echo ' <a href="http://it.esedu.fi/~niko.hamalainen4/PHP-Palautelomake/php-lomake/feedback.txt">Klikkaa tästä!</a>';
 
         $headers = "MIME-Version: 1.0" . "\r\n";
         $headers .= "Content-Type:text/html;charset=UTF-8" . "\r\n";
