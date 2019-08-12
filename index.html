@@ -2,7 +2,7 @@
 <html lang="fi">
     <head>
         <title>PHP-lomake</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <form action="write.php" method=POST>
@@ -13,13 +13,14 @@
             <input type="text" name="email">
             <br>
             <label>Feedback</label>
-            <input type="text" name="feedback">
+            <input type="textarea" name="feedback">
             <br>
             <input type="submit" name="submit">
-        </form>
 
-        <a href="feedback.html">
-            <button>Palautteet</button>
-        </a>
+
+        <a href="feedback.html"><p>palautteet</p></a>
+
+
+    </form>
     </body>
 </html>
