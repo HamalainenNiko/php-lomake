@@ -27,7 +27,7 @@ if(isset($name) && isset($email) && isset($feedback)){
         $headers = "MIME-Version: 1.0" . "\r\n";
         $headers .= "Content-Type:text/html;charset=UTF-8" . "\r\n";
         $headers .= "From: " .$email . "\r\n";
-        
+       
         if(mail($toEmail, $subject, $body, $headers)){
             $msg = 'Sähköposti lähetetty';
             $msgClass = 'alert-success';
@@ -40,4 +40,5 @@ if(isset($name) && isset($email) && isset($feedback)){
 else {
     die('no post data to process');
 } 
+        
 ?>
